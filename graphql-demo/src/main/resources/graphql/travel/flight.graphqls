@@ -1,0 +1,8 @@
+type Flight {
+    id: ID!
+    number: String!
+    origin: String!
+    destination: String!
+    etd: Date!
+    eta: Date!
+}

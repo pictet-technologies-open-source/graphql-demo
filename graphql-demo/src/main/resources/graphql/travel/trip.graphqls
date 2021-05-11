@@ -1,0 +1,7 @@
+#
+type Trip {
+    id: ID!
+    client: Client!
+    flightBookings: [FlightBooking]
+}
+

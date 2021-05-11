@@ -1,0 +1,6 @@
+
+type FlightBooking {
+    id: ID!
+    flight: Flight!
+    seatNumber: String
+}

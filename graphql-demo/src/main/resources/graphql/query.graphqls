@@ -1,0 +1,4 @@
+# Queries supported
+type Query {
+    trip(id: ID): Trip
+}
