@@ -11,3 +11,14 @@ public class GraphqlDemoApplication {
 	}
 
 }
+/*
+
+Compare REST and GraphQL
+
+API endpoint and response
+
+Create a showcase
+
+Advantages of GraphQL
+
+ */
