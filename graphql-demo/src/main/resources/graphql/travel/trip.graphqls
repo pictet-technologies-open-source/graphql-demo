@@ -1,6 +1,7 @@
 #
 type Trip {
     id: ID!
+    name: String
     client: Client!
     flightBookings: [FlightBooking]
 }

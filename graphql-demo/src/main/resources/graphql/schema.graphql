@@ -1,0 +1,34 @@
+# This file was generated based on ".graphqlconfig". Do not edit manually.
+
+schema {
+    query: Query
+}
+
+type Client {
+    id: ID!
+    name: String!
+}
+
+type Flight {
+    destination: String!
+    id: ID!
+    number: String!
+    origin: String!
+}
+
+type FlightBooking {
+    flight: Flight!
+    id: ID!
+    seatNumber: String
+}
+
+"Queries supported"
+type Query {
+    trip(id: ID): Trip
+}
+
+type Trip {
+    client: Client!
+    flightBookings: [FlightBooking]
+    id: ID!
+}

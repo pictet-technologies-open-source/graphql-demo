@@ -21,7 +21,7 @@ public class Flight {
 
     private String destination;
 
-    private Instant etd;
-
-    private Instant eta;
+//    private Instant etd;
+//
+//    private Instant eta;
 }
