@@ -28,11 +28,11 @@ public class TripResolver implements GraphQLQueryResolver {
         log.info("Returning trip with id {}", id);
         Optional<Trip> trip = tripRepository.findById(id);
 
-        return Trip.builder()
-            .id(trip.get().getId())
-            .name(trip.get().getName())
+        return trip.map(value -> Trip.builder()
+            .id(value.getId())
+            .name(value.getName())
             .client(clientRepository.findFirstByName("Jane"))
             .flightBookings((List<FlightBooking>) flightBookingRepository.findAll())
-            .build();
+            .build()).orElse(null);
     }
 }
