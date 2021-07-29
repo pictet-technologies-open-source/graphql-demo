@@ -10,15 +10,15 @@ import {Apollo, gql} from 'apollo-angular';
     <div *ngIf="error">
       Error :(
     </div>
-    <div *ngIf="rates">
-      <div *ngFor="let rate of rates">
-        <p>{{ rate.currency }}: {{ rate.rate }}</p>
-      </div>
+    <div *ngIf="trip">
+<!--      <div *ngFor="let trip of trip">-->
+        <p>{{ trip.name }}: {{ trip?.client?.name }}</p>
+<!--      </div>-->
     </div>
   `,
 })
 export class ExchangeRates implements OnInit {
-  rates: any[];
+  trip: any;
   loading = true;
   error: any;
 
@@ -29,15 +29,25 @@ export class ExchangeRates implements OnInit {
       .watchQuery({
         query: gql`
           {
-            rates(currency: "USD") {
-              currency
-              rate
+            trip(id: 1) {
+              name
+              client {
+                name
+              }
+              flightBookings {
+                seatNumber
+                flight {
+                  origin
+                  destination
+                  number
+                }
+              }
             }
           }
         `,
       })
       .valueChanges.subscribe((result: any) => {
-        this.rates = result?.data?.rates;
+        this.trip = result?.data?.trip;
         this.loading = result.loading;
         this.error = result.error;
       });

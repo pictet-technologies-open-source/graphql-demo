@@ -31,4 +31,5 @@ type Trip {
     client: Client!
     flightBookings: [FlightBooking]
     id: ID!
+    name: String
 }
