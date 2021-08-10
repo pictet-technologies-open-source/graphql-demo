@@ -21,3 +21,10 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/graphql-ui/node_modules
+/graphql-ui/dist
+/graphql-ui/.editorconfig
+/graphql-ui/.idea
+/graphql-ui/.gradle
+/graphql-ui/graphql-ui.iml
+/graphql-demo/.idea
