@@ -1,6 +1,5 @@
 package com.pictet.technologies.opensource.graphqldemo.resolver;
 
-import com.pictet.technologies.opensource.graphqldemo.model.Client;
 import com.pictet.technologies.opensource.graphqldemo.model.FlightBooking;
 import com.pictet.technologies.opensource.graphqldemo.model.Trip;
 import com.pictet.technologies.opensource.graphqldemo.repository.ClientRepository;
@@ -10,11 +9,9 @@ import graphql.kickstart.tools.GraphQLQueryResolver;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.CrossOrigin;
+
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
-import java.util.UUID;
 
 @Slf4j
 @Component
