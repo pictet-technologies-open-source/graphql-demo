@@ -32,8 +32,8 @@ public class TripResolver implements GraphQLQueryResolver {
         return trip.map(value -> Trip.builder()
             .id(value.getId())
             .name(value.getName())
-            .client(clientRepository.findFirstByName("Jane"))
-            .flightBookings((List<FlightBooking>) flightBookingRepository.findAll())
+            .client(value.getClient())
+            .flightBookings(value.getFlightBookings())
             .build()).orElse(null);
     }
 }
