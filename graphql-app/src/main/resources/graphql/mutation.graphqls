@@ -1,3 +1,7 @@
 type Mutation {
     createClient(input: CreateClientInput): Client!
 }
+
+type Mutation {
+    createTrip(input: CreateTripInput): Trip!
+}

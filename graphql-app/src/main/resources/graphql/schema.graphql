@@ -2,9 +2,11 @@
 
 schema {
     query: Query
+    mutation: Mutation
 }
 
 type Client {
+    age: Int
     id: ID!
     name: String!
 }

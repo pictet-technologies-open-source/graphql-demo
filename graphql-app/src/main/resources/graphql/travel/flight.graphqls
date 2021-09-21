@@ -3,6 +3,4 @@ type Flight {
     number: String!
     origin: String!
     destination: String!
-#    etd: Date!
-#    eta: Date!
 }

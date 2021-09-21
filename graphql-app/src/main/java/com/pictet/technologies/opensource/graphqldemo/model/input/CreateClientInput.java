@@ -5,5 +5,7 @@ import lombok.Data;
 @Data
 public class CreateClientInput {
 
+    Long id;
     String name;
+    Integer age;
 }

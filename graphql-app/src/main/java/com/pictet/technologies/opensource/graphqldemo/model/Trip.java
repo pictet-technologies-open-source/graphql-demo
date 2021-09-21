@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.Accessors;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ import java.util.List;
 @Entity
 @Data
 @Builder
+@Accessors(chain = true)
 @NoArgsConstructor
 @AllArgsConstructor
 public class Trip {

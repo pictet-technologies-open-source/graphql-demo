@@ -1,4 +1,5 @@
 type Client {
     id: ID!
     name: String!
+    age: Int
 }

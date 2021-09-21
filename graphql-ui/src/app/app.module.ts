@@ -5,12 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import {ExchangeRates} from "./exchange-rates.component";
+import {AppTripComponent} from './app-trip.component';
 
 @NgModule({
     declarations: [
         AppComponent,
-        ExchangeRates
+        AppTripComponent
     ],
   imports: [
     BrowserModule,
