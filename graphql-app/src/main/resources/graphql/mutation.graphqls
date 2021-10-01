@@ -1,7 +1,33 @@
 type Mutation {
-    createClient(input: CreateClientInput): Client!
+    createClient(input: ClientInput): Client!
+    createTrip(input: TripInput): Trip!
+    updateTrip(id: ID!, name: String!): Trip!
+    updateTripUsingTripInputObject(input: TripInput): Trip!
+    deleteTrip(id: ID): Trip!
 }
 
-type Mutation {
-    createTrip(input: CreateTripInput): Trip!
+input TripInput {
+    id: ID
+    client: ClientInput!
+    flightBookings: [FlightBookingInput]
+    name: String!
+}
+
+input ClientInput {
+    name: String!
+    age: Int!
+    id: ID
+}
+
+input FlightBookingInput {
+    id: ID
+    flight: FlightInput
+    seatNumber: String
+}
+
+input FlightInput {
+    id: ID
+    destination: String!
+    number: String!
+    origin: String!
 }

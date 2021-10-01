@@ -1,6 +1,7 @@
 package com.pictet.technologies.opensource.graphqldemo.model;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.persistence.OneToOne;
 
 @Entity
 @Data
+@Accessors(chain = true)
 public class FlightBooking {
 
     @Id

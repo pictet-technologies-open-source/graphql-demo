@@ -1,7 +1,7 @@
 package com.pictet.technologies.opensource.graphqldemo.resolver.mutation;
 
 import com.pictet.technologies.opensource.graphqldemo.model.Client;
-import com.pictet.technologies.opensource.graphqldemo.model.input.CreateClientInput;
+import com.pictet.technologies.opensource.graphqldemo.model.input.ClientInput;
 import com.pictet.technologies.opensource.graphqldemo.repository.ClientRepository;
 import graphql.kickstart.tools.GraphQLMutationResolver;
 import lombok.RequiredArgsConstructor;
@@ -14,13 +14,13 @@ public class ClientMutation implements GraphQLMutationResolver {
 
     private final ClientRepository clientRepository;
 
-    public Client createClient(CreateClientInput input) {
+    public Client createClient(ClientInput input) {
          return clientRepository.save(new Client()
              .setName(input.getName())
              .setAge(input.getAge()));
     }
 
-    public Client updateClient(CreateClientInput input) {
+    public Client updateClient(ClientInput input) {
         final Optional<Client> clientOptional = clientRepository.findById(input.getId());
         if (clientOptional.isPresent()) {
             Client client = clientOptional.get();
@@ -32,7 +32,7 @@ public class ClientMutation implements GraphQLMutationResolver {
         return null;
     }
 
-    public void deleteClient(CreateClientInput input) {
+    public void deleteClient(ClientInput input) {
         clientRepository.deleteById(input.getId());
     }
 

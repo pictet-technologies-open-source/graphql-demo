@@ -1,5 +1,0 @@
-input CreateClientInput {
-    name: String!
-    age: Int
-    id: ID
-}
