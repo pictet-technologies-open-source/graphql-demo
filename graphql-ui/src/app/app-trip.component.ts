@@ -22,10 +22,18 @@ import {Apollo, gql} from 'apollo-angular';
             </div>
 
         </div>
+        <br>
+        <br>
+        <h3>Displaying content for the newly added trip with id = {{newTrip.id}}</h3>
+        <div *ngIf="newTrip">
+            <p>Trip name: {{ newTrip.name }} </p>
+            <p>Client: {{ newTrip?.client?.name }}</p>
+        </div>
     `,
 })
 export class AppTripComponent implements OnInit {
     trip: any;
+    newTrip: any;
     loading = true;
     error: any;
     tripId = 1;
@@ -35,7 +43,7 @@ export class AppTripComponent implements OnInit {
 
     ngOnInit() {
         this.apollo
-        .watchQuery({
+        .watchQuery({ // example query
             query: gql`
                 {
                     trip(id: 1) {
@@ -60,5 +68,29 @@ export class AppTripComponent implements OnInit {
             this.loading = result.loading;
             this.error = result.error;
         });
+
+        this.apollo.mutate({ // example mutation
+            mutation:  gql`   
+                mutation {   
+                    createTrip (input:{
+                        name: "San Francisco to New York",
+                        client : {
+                            name: "Lara",
+                            age: 22
+                        }
+                    }) {
+                        id
+                        name
+                        client {
+                            name
+                        }
+                    }
+                }
+            `
+        }).subscribe((result: any) => {
+            this.newTrip = result?.data?.createTrip;
+        });
     }
+
+
 }
