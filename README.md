@@ -34,9 +34,16 @@ After clicking on the 'Connect' button, you should be able to execute SQL querie
 
 #### Start the application
 
+Start the Backend:
+
 ```
 $ mvn clean install
-$ TODO
+$ mvn spring-boot:run
+```
+Start the Frontend:
+
+```
+$ ng serve
 ```
 
 Once the application starts, you can access it using the following links :
@@ -48,8 +55,3 @@ GraphQL Playground                | http://localhost:8083/playground
 H2 console                   | http://localhost:8083/h2-console
 
 
-#### Stop the application
-
-```
-$ TODO
-```

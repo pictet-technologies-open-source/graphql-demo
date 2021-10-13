@@ -70,8 +70,8 @@ export class AppTripComponent implements OnInit {
         });
 
         this.apollo.mutate({ // example mutation
-            mutation:  gql`   
-                mutation {   
+            mutation:  gql`
+                mutation {
                     createTrip (input:{
                         name: "San Francisco to New York",
                         client : {
