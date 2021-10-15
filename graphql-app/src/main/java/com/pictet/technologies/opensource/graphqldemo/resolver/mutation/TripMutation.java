@@ -25,10 +25,10 @@ public class TripMutation implements GraphQLMutationResolver {
         final Long clientId = inputClient.getId();
 
         if (clientId == null || !clientRepository.existsById(clientId)) {
-            client = clientRepository.save(new Client().setAge(inputClient.getAge()).setName(inputClient.getName()));
+            client = clientRepository.save(new Client().setAge(inputClient.getAge())
+                .setName(inputClient.getName()));
         } else {
             client = clientRepository.findById(clientId).get();
-            clientRepository.save(client.setAge(inputClient.getAge()).setName(inputClient.getName()));
         }
 
         return tripRepository.save(new Trip()
@@ -38,42 +38,24 @@ public class TripMutation implements GraphQLMutationResolver {
     }
 
     public Trip updateTrip(Long id, String name) {
-
-        final Optional<Trip> optionalTrip = tripRepository.findById(id);
-
-        if (!optionalTrip.isPresent()) {
-            throw new IllegalArgumentException("Trip with id " + id + " not found");
-        }
-
-        Trip trip = optionalTrip.get();
+        final Trip trip = tripRepository.findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("Trip with id " + id + " not found"));
         trip.setName(name);
         return tripRepository.save(trip);
     }
 
     public Trip updateTripUsingTripInputObject(TripInput input) {
-
         Long id = input.getId();
-        final Optional<Trip> optionalTrip = tripRepository.findById(id);
-
-        if (!optionalTrip.isPresent()) {
-            throw new IllegalArgumentException("Trip with id " + id + " not found");
-        }
-
-        Trip trip = optionalTrip.get();
+        final Trip trip = tripRepository.findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("Trip with id " + id + " not found"));
         trip.setName(input.getName());
         return tripRepository.save(trip);
     }
 
     public Trip deleteTrip(Long id) {
-
-        final Optional<Trip> optionalTrip = tripRepository.findById(id);
-        if (!optionalTrip.isPresent()) {
-            throw new IllegalArgumentException("Trip with id " + id + " not found");
-        }
-
-        Trip trip = optionalTrip.get();
+        final Trip trip = tripRepository.findById(id)
+            .orElseThrow(() -> new IllegalArgumentException("Trip with id " + id + " not found"));
         tripRepository.deleteById(id);
-
         return trip;
     }
 }
