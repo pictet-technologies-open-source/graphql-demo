@@ -1,8 +1,6 @@
-#
-type Trip {
-    id: ID!
-    name: String
-    client: Client!
-    flightBookings: [FlightBooking]
+type Trip { # This Trip object type has four fields
+    client: Client! # Returns a non nullable Client object type
+    flightBookings: [FlightBooking] # Returns a list of FlightBooking object type
+    id: ID! # Returns a non nullable ID scalar type
+    name: String  # Returns a String scalar type
 }
-
