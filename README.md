@@ -1,10 +1,10 @@
 [![CircleCI](https://circleci.com/gh/pictet-technologies-open-source/graphql-demo/tree/main.svg?style=shield&circle-token=e130d37bbd598ce4274446d5c0aa94f3206501af)](https://circleci.com/gh/pictet-technologies-open-source/graphql-demo)
 [![CodeFactor](https://www.codefactor.io/repository/github/pictet-technologies-open-source/graphql-demo/badge?s=b1bb2e87ea6dde7623a129a138039c56811bd50f)](https://www.codefactor.io/repository/github/pictet-technologies-open-source/graphql-demo)
 
-# Build a web application using GraphQL and analyse the differences with REST
+# Learn how to develop efficient and simplified applications using GraphQL
 
-This project aims to build a web application of a Travel Agency with **Spring Boot**, **GraphQL**, **Angular** and **RDBMS**.
-It provides operations on the trips of the Travel Agency using GraphQL. It also compares the REST implementation of the CRUD operations with that of GraphQL.
+This project builds a Travel agency web application with **Spring Boot**, **GraphQL**, **Angular** and **RDBMS**.
+It helps clients to manage operations related to flight bookings for trips. It also compares the REST implementation of the CRUD operations with that of GraphQL.
 
 ### Project structure
 
