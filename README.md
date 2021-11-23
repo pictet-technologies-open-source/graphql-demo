@@ -11,8 +11,8 @@ It helps clients to manage operations related to flight bookings for trips. It a
 
 Folder                    | Description
 --------------------------|--------------------------------------------------------------
-graphql-app               | Spring boot application (back-end)
-graphql-ui               | Angular application (front-end)
+graphql-app               | Spring boot application (back end)
+graphql-ui               | Angular application (front end)
 
 
 ### Local environment
@@ -34,13 +34,13 @@ After clicking on the 'Connect' button, you should be able to execute SQL querie
 
 #### Start the application
 
-Start the Backend:
+Start the back end:
 
 ```
 $ mvn clean install
 $ mvn spring-boot:run
 ```
-Start the Frontend:
+Start the front end:
 
 ```
 $ ng serve
